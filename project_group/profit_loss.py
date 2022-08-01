@@ -1,3 +1,4 @@
+
 from pathlib import Path
 import csv
 file_path = Path.cwd()/"project_group"/"csv_reports"/"Profits and Loss.csv"
@@ -21,6 +22,11 @@ for index, value in enumerate(netprofit):
         diff = netprofit[index] - netprofit[index-1]
         if diff < 0 :
             deficit.append(value)
+
+
+
+print(allprofits)
+print(deficit)
 
 
 for items in allprofits:
