@@ -1,10 +1,12 @@
 from pathlib import Path
 import csv
-file_path = Path.cwd()/"project_group"/"csv_reports"
+
 
 cashonhand = []
-def csvread(path, csvfile, list):
-    newpath = path/csvfile
+def csvread(csvfile, list):
+    
+    allfilepath = Path.cwd()/"project_group"/"csv_reports"
+    newpath = allfilepath/csvfile
     with newpath.open(mode = "r",encoding = "UTF-8", newline="") as file:
         reader = csv.reader(file)
         next(reader) 
@@ -14,7 +16,7 @@ def csvread(path, csvfile, list):
         
 
 
-csvread(file_path, 'Cash on Hand.csv', cashonhand)
+csvread('Cash on Hand.csv', cashonhand)
 print(cashonhand)
 
 
