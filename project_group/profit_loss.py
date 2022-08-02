@@ -2,7 +2,7 @@ from pathlib import Path
 from read_files import csvread
 import api
 
-def test():
+def profitloss():
     netprofit = []
     allprofits = []
     alldata = []
@@ -36,7 +36,4 @@ def test():
         print(list)
                     
 
-
-    
-
-test()
+profitloss()
