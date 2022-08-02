@@ -24,7 +24,7 @@ def overheads():
             allov.append(ov)
             highest = [max(allov)]
             if ov in highest:
-                return (f"[HIGHEST OVERHEADS] {category.upper()}: {api.convert(ov):.2f}")
+                return (f"[HIGHEST OVERHEADS] {category.upper()}: SGD{api.convert(ov):.2f}")
 
 
 

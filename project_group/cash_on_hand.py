@@ -25,7 +25,7 @@ def cash_on_hand():
         for days, number in items.items():
             for one, two in deficit:
                 if number == one:
-                    print(two)
+                    return(two)
     else:
-        print(f"[CASH SURPLUS] CASH ON HAND EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
+        return(f"[CASH SURPLUS] CASH ON HAND EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
 
