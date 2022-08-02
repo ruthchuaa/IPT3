@@ -25,5 +25,3 @@ for items in allprofits:
             if number == one:
                 print(two)
 
-
-        
