@@ -8,3 +8,4 @@ all = apidata['Realtime Currency Exchange Rate']['5. Exchange Rate']
 def convert(USD):
     SGD = int(USD) * all 
     return SGD
+
