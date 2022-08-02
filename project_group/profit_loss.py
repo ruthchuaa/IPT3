@@ -27,7 +27,7 @@ def test():
             for one, two in deficit:
                 if number == one:
                     amt = abs(two)
-                    print(f'[CASH DEFICIT] DAY : {days}, AMOUNT : {api.convert(amt):.2f}')
+                    print(f'[PROFIT DEFICIT] DAY : {days}, AMOUNT : {api.convert(amt):.2f}')
     
                 
 test()
