@@ -1,7 +1,4 @@
-
 from pathlib import Path
-import csv
-
 from read_files import csvread
 
 netprofit = []
@@ -20,11 +17,13 @@ for index, value in enumerate(netprofit):
     if value > netprofit[0]:
         diff = netprofit[index] - netprofit[index-1]
         if diff < 0 :
-            deficit.append(value)
-
+            deficit.append([value, diff])
 
 for items in allprofits:
-    for days, number in items.items() :
-        if number in deficit :
-             print(days)
+    for days, number in items.items():
+        for one, two in deficit:
+            if number == one:
+                print(two)
+
+
         
