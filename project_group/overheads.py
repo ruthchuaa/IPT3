@@ -20,5 +20,5 @@ for lists in overheads:
         allov.append(ov)
         highest = [max(allov)]
         if ov in highest:
-            print(category) 
+            print(category, ov) 
     
