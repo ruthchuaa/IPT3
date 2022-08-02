@@ -2,7 +2,7 @@ from pathlib import Path
 from read_files import csvread
 import api
 
-def test():
+def profitloss():
     netprofit = []
     allprofits = []
     alldata = []
@@ -27,7 +27,6 @@ def test():
             for one, two in deficit:
                 if number == one:
                     amt = abs(two)
-                    print(f'[PROFIT DEFICIT] DAY : {days}, AMOUNT : {api.convert(amt):.2f}')
+                    return (f'[PROFIT DEFICIT] DAY : {days}, AMOUNT : {api.convert(amt):.2f}')
     
                 
-test()
