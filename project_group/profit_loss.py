@@ -1,5 +1,6 @@
 from pathlib import Path
 from read_files import csvread
+import api
 
 def test():
     netprofit = []
@@ -25,5 +26,8 @@ def test():
         for days, number in items.items():
             for one, two in deficit:
                 if number == one:
-                    print(two)
-
+                    amt = abs(two)
+                    print(f'[CASH DEFICIT] DAY : {days}, AMOUNT : {api.convert(amt):.2f}')
+    
+                
+test()
