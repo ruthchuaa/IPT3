@@ -33,7 +33,6 @@ for items in allCOH:
         if number in deficit :
              print(days)
         
-
         else:
             print("No cash deficit found")
         
