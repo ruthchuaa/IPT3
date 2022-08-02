@@ -33,7 +33,9 @@ def profitloss():
     if list == []:
         print(f'[PROFIT SURPLUS] PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY')
     else :
-        print(list)
+        for times , val in enumerate(list):
+            return(list[times])
+
                     
 
-profitloss()
+
