@@ -29,4 +29,3 @@ def cash_on_hand():
     else:
         print(f"[CASH SURPLUS] CASH ON HAND EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
 
-cash_on_hand()
