@@ -1,5 +1,6 @@
 from pathlib import Path
 import csv
+import api
 
 def overheads():
     file_path = Path.cwd()/"project_group"/"csv_reports"/"Overheads.csv"
@@ -23,7 +24,7 @@ def overheads():
             allov.append(ov)
             highest = [max(allov)]
             if ov in highest:
-                print(f"[HIGHEST OVERHEADS] {category.upper(), ov}")
+                print(f"[HIGHEST OVERHEADS] {category.upper()}: {api.convert(ov):.2f}")
 
 overheads()
 

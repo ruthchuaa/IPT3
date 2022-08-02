@@ -5,7 +5,8 @@ r = requests.get(url)
 apidata = r.json()
 
 all = apidata['Realtime Currency Exchange Rate']['5. Exchange Rate']
+
 def convert(USD):
-    SGD = int(USD) * all 
+    SGD = float(USD) * float(all)
     return SGD
 
