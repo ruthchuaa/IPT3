@@ -10,7 +10,4 @@ print(file_path.exists())
 # list= [f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{api.all}"]
 with file_path.open(mode = "w") as file:
     file.writelines(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{api.all}")
-    file.writelines(f"\n{overheads.overheads}")
-
-
-
+    file.writelines(f"\n{overheads.overheads()}")
