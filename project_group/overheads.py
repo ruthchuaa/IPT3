@@ -24,8 +24,8 @@ def overheads():
             allov.append(ov)
             highest = [max(allov)]
             if ov in highest:
-                print(f"[HIGHEST OVERHEADS] {category.upper()}: {api.convert(ov):.2f}")
+                return (f"[HIGHEST OVERHEADS] {category.upper()}: {api.convert(ov):.2f}")
 
-overheads()
+
 
                 

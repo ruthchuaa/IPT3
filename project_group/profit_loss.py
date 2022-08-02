@@ -27,4 +27,3 @@ def test():
                 if number == one:
                     print(two)
 
-test()
