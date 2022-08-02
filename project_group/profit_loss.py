@@ -21,13 +21,22 @@ def test():
             if diff < 0 :
                 deficit.append([value, diff])
 
-
+    list = []
     for items in allprofits:
         for days, number in items.items():
             for one, two in deficit:
                 if number == one:
                     amt = abs(two)
-                    print(f'[PROFIT DEFICIT] DAY : {days}, AMOUNT : {api.convert(amt):.2f}')
+                    re = (f'[PROFIT DEFICIT] DAY : {days}, AMOUNT : {api.convert(amt):.2f}')
+                    list.append(re)
+
+    if list == []:
+        print(f'[PROFIT SURPLUS] PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY')
+    else :
+        print(list)
+                    
+
+
     
-                
+
 test()
