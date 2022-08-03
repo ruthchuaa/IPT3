@@ -1,7 +1,4 @@
-from inspect import isgetsetdescriptor
 from pathlib import Path
-from tracemalloc import is_tracing
-from unittest import result
 from read_files import csvread
 import api
 
