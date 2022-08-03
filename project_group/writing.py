@@ -13,4 +13,5 @@ with file_path.open(mode = "w") as file:
     file.writelines(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{api.all}")
     file.writelines(f"\n{overheads.overheads()}")
     file.writelines(f"\n{cash_on_hand.cash_on_hand()}")
-    file.writelines(f"\n{profit_loss.profitloss()}")
+    for num, val in enumerate(profit_loss.profitloss()):
+        file.writelines(f"\n{profit_loss.profitloss()[num]}")

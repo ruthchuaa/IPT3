@@ -1,4 +1,7 @@
+from inspect import isgetsetdescriptor
 from pathlib import Path
+from tracemalloc import is_tracing
+from unittest import result
 from read_files import csvread
 import api
 
@@ -27,15 +30,23 @@ def profitloss():
             for one, two in deficit:
                 if number == one:
                     amt = abs(two)
-                    re = (f'[PROFIT DEFICIT] DAY : {days}, AMOUNT : {api.convert(amt):.2f}')
+                    re = (f'[PROFIT DEFICIT] DAY : {days}, AMOUNT : SGD{api.convert(amt):.2f}')
                     list.append(re)
 
     if list == []:
-        print(f'[PROFIT SURPLUS] PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY')
+        return(f'[PROFIT SURPLUS] PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY')
     else :
-        for times , val in enumerate(list):
-            return(list[times])
+        return(list)
 
-                    
+
+
+
+
+
+
+
+
+
+                        
 
 
