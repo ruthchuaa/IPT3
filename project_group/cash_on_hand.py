@@ -1,5 +1,6 @@
 from pathlib import Path
 from read_files import csvread
+import api
 
 def cash_on_hand():
     netCOH = []
@@ -19,13 +20,16 @@ def cash_on_hand():
             diff = netCOH[index] - netCOH[index-1]
             if diff < 0 :
                 deficit.append([value, diff])
-
+                
+    list =[]
 
     for items in allCOH:
         for days, number in items.items():
             for one, two in deficit:
                 if number == one:
-                    return(two)
-    else:
-        return(f"[CASH SURPLUS] CASH ON HAND EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-
+                    amt = abs(two)
+                    re = (f'[CASH DEFICIT] DAY : {days}, AMOUNT : SGD{api.convert(amt):.2f}')
+                    list.append(re)
+                    
+    return(list)
+    
