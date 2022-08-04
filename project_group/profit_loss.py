@@ -1,12 +1,12 @@
 from pathlib import Path
 from read_files import csvread
 import api
-
+#
 def profitloss():
     netprofit = []
     allprofits = []
     alldata = []
-
+##
     readfiles = csvread('Profits and loss.csv', alldata)
 
     for lines in alldata:
@@ -29,7 +29,7 @@ def profitloss():
                     amt = abs(two)
                     re = (f'[PROFIT DEFICIT] DAY : {days}, AMOUNT : SGD{api.convert(amt):.2f}')
                     list.append(re)
-
+#
     if list == []:
         return(f'[PROFIT SURPLUS] PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY')
     else :
