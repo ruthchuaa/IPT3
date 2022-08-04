@@ -4,17 +4,17 @@ import api
 #
 def cash_on_hand():
     try:
-
+#
         netCOH = []
         allCOH = []
         alldata = []
-
+#
         readfiles = csvread('Cash on Hand.csv', alldata)
-
+# 
         for lines in alldata:
             netCOH.append(int(lines[1]))
             allCOH.append({lines[0]: int(lines[1])})
-            
+          #  
         deficit = []
 
         for index, value in enumerate(netCOH):
@@ -24,7 +24,7 @@ def cash_on_hand():
                     deficit.append([value, diff])
             
         list =[]
-
+#
         for items in allCOH:
             for days, number in items.items():
                 for one, two in deficit:
@@ -32,7 +32,7 @@ def cash_on_hand():
                         amt = abs(two)
                         re = (f'[CASH DEFICIT] DAY : {days}, AMOUNT : SGD{api.convert(amt):.2f}')
                         list.append(re)
-                        
+          #              
         return(list)
     except Exception as e:
         return ('Error')
