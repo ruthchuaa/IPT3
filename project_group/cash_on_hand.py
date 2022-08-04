@@ -8,19 +8,19 @@ def cash_on_hand():
     alldata = []
 
     readfiles = csvread('Cash on Hand.csv', alldata)
-
+# comment
     for lines in alldata:
         netCOH.append(int(lines[1]))
         allCOH.append({lines[0]: int(lines[1])})
         
     deficit = []
-
+# comment
     for index, value in enumerate(netCOH):
         if value > netCOH[0]:
             diff = netCOH[index] - netCOH[index-1]
             if diff < 0 :
                 deficit.append([value, diff])
-                
+# comment             
     list =[]
 
     for items in allCOH:

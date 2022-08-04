@@ -1,7 +1,6 @@
 from pathlib import Path
 import csv
 
-
 def csvread(csvfile, list):
     
     allfilepath = Path.cwd()/"project_group"/"csv_reports"
