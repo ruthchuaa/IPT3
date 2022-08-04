@@ -20,9 +20,9 @@ def cash_on_hand():
             diff = netCOH[index] - netCOH[index-1]
             if diff < 0 :
                 deficit.append([value, diff])
-#        
+        
     list =[]
-#
+
     for items in allCOH:
         for days, number in items.items():
             for one, two in deficit:
