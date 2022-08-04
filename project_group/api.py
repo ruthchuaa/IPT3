@@ -7,6 +7,8 @@ apidata = r.json()
 all = apidata['Realtime Currency Exchange Rate']['5. Exchange Rate']
 
 def convert(USD):
-    SGD = float(USD) * float(all)
-    return SGD
-
+    try: 
+        SGD = float(USD) * float(all)
+        return SGD
+    except Exception as e:
+        return 'Error'
