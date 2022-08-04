@@ -3,37 +3,40 @@ from read_files import csvread
 import api
 
 def profitloss():
-    netprofit = []
-    allprofits = []
-    alldata = []
+    try :
+        netprofit = []
+        allprofits = []
+        alldata = []
 
-    readfiles = csvread('Profits and loss.csv', alldata)
+        readfiles = csvread('Profits and loss.csv', alldata)
 
-    for lines in alldata:
-        netprofit.append(int(lines[4]))
-        allprofits.append({lines[0]: int(lines[4])})
-        
-    deficit = []
+        for lines in alldata:
+            netprofit.append(int(lines[4]))
+            allprofits.append({lines[0]: int(lines[4])})
+            
+        deficit = []
 
-    for index, value in enumerate(netprofit):
-        if value > netprofit[0]:
-            diff = netprofit[index] - netprofit[index-1]
-            if diff < 0 :
-                deficit.append([value, diff])
+        for index, value in enumerate(netprofit):
+            if value > netprofit[0]:
+                diff = netprofit[index] - netprofit[index-1]
+                if diff < 0 :
+                    deficit.append([value, diff])
 
-    list = []
-    for items in allprofits:
-        for days, number in items.items():
-            for one, two in deficit:
-                if number == one:
-                    amt = abs(two)
-                    re = (f'[PROFIT DEFICIT] DAY : {days}, AMOUNT : SGD{api.convert(amt):.2f}')
-                    list.append(re)
+        list = []
+        for items in allprofits:
+            for days, number in items.items():
+                for one, two in deficit:
+                    if number == one:
+                        amt = abs(two)
+                        re = (f'[PROFIT DEFICIT] DAY : {days}, AMOUNT : SGD{amt}') #api.convert(amt):.2f
+                        list.append(re)
 
-    if list == []:
-        return(f'[PROFIT SURPLUS] PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY')
-    else :
-        return(list)
+        if list == []:
+            return(f'[PROFIT SURPLUS] PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY')
+        else :
+            return(list)
+    except Exception as e:
+        return('Error')
 
 
 
