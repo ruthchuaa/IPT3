@@ -9,7 +9,7 @@ def overheads():
     '''
     try:
         # Create empty list to append all lines from Overheads.csv 
-        # and another empty list for all values from the different categories
+        # and another empty list for all values with the different categories
         overhead = []
         alldata = []
 

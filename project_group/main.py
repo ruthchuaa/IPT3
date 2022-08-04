@@ -25,7 +25,7 @@ with file_path.open(mode = "w") as file:
     else :
         # write data from 'cash_on_hand.py' file into 'summary_report.txt'
         for num, val in enumerate(cash_on_hand.cash_on_hand()):
-            file.writelines(f"\n{cash_on_hand.cash_on_hand([num])}")
+            file.writelines(f"\n{cash_on_hand.cash_on_hand()[num]}")
 
     # write the following string into 'summary_report.txt' if there is no data found in the 'profit_loss.py' file 
     if profit_loss.profitloss() == [] :

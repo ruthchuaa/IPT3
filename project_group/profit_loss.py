@@ -44,13 +44,14 @@ def profitloss():
                     if number == one:
                         amt = abs(two)
                         # if values appear in deficit, append cash deficit day and converted amount from USD to SGD to list
-                        re = (f'[PROFIT DEFICIT] DAY : {days}, AMOUNT : SGD{amt}') #api.convert(amt):.2f
+                        re = (f'[PROFIT DEFICIT] DAY : {days}, AMOUNT : SGD{api.convert(amt)}') 
                         list.append(re)
 
         if list == []:
             return(f'[PROFIT SURPLUS] PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY')
         else :
             return(list)
+        
     except Exception as e:
         return('Error')
 

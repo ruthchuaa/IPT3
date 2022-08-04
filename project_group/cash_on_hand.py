@@ -44,12 +44,13 @@ def cash_on_hand():
         for items in allCOH:
             for days, number in items.items():
                 for one, two in deficit:
-                    # if values appear in deficit, append cash deficit day and amount to list
+                    # if values appear in deficit, append cash deficit day and converted amount from USD to SGD to list
                     if number == one:
                         amt = abs(two)
+                    
                         re = (f'[CASH DEFICIT] DAY : {days}, AMOUNT : SGD{api.convert(amt):.2f}')
                         list.append(re)
-                     
+                        
         return(list)
     except Exception as e:
         return ('Error')
