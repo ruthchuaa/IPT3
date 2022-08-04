@@ -7,7 +7,7 @@ def cash_on_hand():
     allCOH = []
     alldata = []
 
-    readfiles = csvread('Cash_on_Hand.csv', alldata)
+    readfiles = csvread('Cash on Hand.csv', alldata)
 
     for lines in alldata:
         netCOH.append(int(lines[1]))
@@ -32,6 +32,8 @@ def cash_on_hand():
                     list.append(re)
                     
     return(list)
+
+print(cash_on_hand())
 
 
 
