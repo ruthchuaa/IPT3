@@ -33,7 +33,6 @@ def cash_on_hand():
                     
     return(list)
 
-print(cash_on_hand())
 
 
 
