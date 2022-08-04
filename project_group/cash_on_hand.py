@@ -8,7 +8,7 @@ def cash_on_hand():
     alldata = []
 
     readfiles = csvread('Cash on Hand.csv', alldata)
-# comment
+# 
     for lines in alldata:
         netCOH.append(int(lines[1]))
         allCOH.append({lines[0]: int(lines[1])})
