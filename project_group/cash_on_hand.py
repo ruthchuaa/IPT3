@@ -4,13 +4,13 @@ import api
 #
 def cash_on_hand():
     try:
-
+#
         netCOH = []
         allCOH = []
         alldata = []
-
+#
         readfiles = csvread('Cash on Hand.csv', alldata)
-
+# 
         for lines in alldata:
             netCOH.append(int(lines[1]))
             allCOH.append({lines[0]: int(lines[1])})
